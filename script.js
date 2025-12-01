@@ -2,6 +2,14 @@ function AppendValue(value) {
     document.getElementById('display').value += value;
 }
 
+function AppendEulerConstant() {
+    document.getElementById('display').value += Math.E;
+}
+
+function AppendPiConstant() {
+    document.getElementById('display').value += Math.PI;
+}
+
 function Calculate() {
     let display = document.getElementById('display');
     try {
@@ -26,6 +34,16 @@ function Cosine() {
     let display = document.getElementById('display');
     try {
         display.value = Math.cos(eval(display.value));
+    }
+    catch {
+        display.value = "Error";
+    }
+}
+
+function Tangent() {
+    let display = document.getElementById('display');
+    try {
+        display.value = Sine() / Cosine();
     }
     catch {
         display.value = "Error";
