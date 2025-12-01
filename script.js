@@ -43,7 +43,7 @@ function Cosine() {
 function Tangent() {
     let display = document.getElementById('display');
     try {
-        display.value = Sine() / Cosine();
+        display.value = Math.tan(eval(display.value));
     }
     catch {
         display.value = "Error";
