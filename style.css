@@ -45,12 +45,12 @@ button:hover {
     background: #cccccc;
 }
 
-.clear {
+button.clear {
     background: #af4c4c;
     color: white;
     grid-column: span 4;
 }
 
-.clear:hover {
+button.clear:hover {
     background: #a04545;
 }
