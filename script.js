@@ -15,7 +15,7 @@ function Calculate() {
 function Sine() {
     let display = document.getElementById('display');
     try {
-        display.value = eval(Math.sin(display.value));
+        display.value = Math.sin(eval(display.value));
     }
     catch {
         display.value = "Error";
@@ -25,7 +25,7 @@ function Sine() {
 function Cosine() {
     let display = document.getElementById('display');
     try {
-        display.value = eval(Math.cos(display.value));
+        display.value = Math.cos(eval(display.value));
     }
     catch {
         display.value = "Error";
@@ -35,7 +35,7 @@ function Cosine() {
 function Logarithm() {
     let display = document.getElementById('display');
     try {
-        display.value = eval(Math.log(display.value));
+        display.value = Math.log(eval(display.value));
     }
     catch {
         display.value = "Error";
