@@ -44,13 +44,3 @@ button {
 button:hover {
     background: #cccccc;
 }
-
-button.clear {
-    background: #af4c4c;
-    color: white;
-    grid-column: span 4;
-}
-
-button.clear:hover {
-    background: #a04545;
-}
