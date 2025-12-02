@@ -27,15 +27,15 @@ function Mode() {
     document.getElementById('unitsButton').textContent = angleUnits;
 }
 
-function ConvertToDegrees(radians) {
-    return (radians * 180 / Math.PI);
+function ConvertToRadians(degrees) {
+    return (degrees * Math.PI / 180);
 }
 
 function Sine() {
     let display = document.getElementById('display');
     let value = eval(display.value)
     try {
-        display.value = (angleUnits === "RAD" ? Math.sin(value) : Math.sin(ConvertToDegrees(value)));
+        display.value = (angleUnits === "RAD" ? Math.sin(value) : Math.sin(ConvertToRadians(value)));
     }
     catch {
         display.value = "Error";
@@ -46,7 +46,7 @@ function Cosine() {
     let display = document.getElementById('display');
     let value = eval(display.value)
     try {
-        display.value = (angleUnits === "RAD" ? Math.cos(value) : Math.cos(ConvertToDegrees(value)));
+        display.value = (angleUnits === "RAD" ? Math.cos(value) : Math.cos(ConvertToRadians(value)));
     }
     catch {
         display.value = "Error";
@@ -57,7 +57,7 @@ function Tangent() {
     let display = document.getElementById('display');
     let value = eval(display.value)
     try {
-        display.value = (angleUnits === "RAD" ? Math.tan(value) : Math.tan(ConvertToDegrees(value)));
+        display.value = (angleUnits === "RAD" ? Math.tan(value) : Math.tan(ConvertToRadians(value)));
     }
     catch {
         display.value = "Error";
