@@ -55,6 +55,10 @@ button:hover {
     background: #45a049;
 }
 
+.unitsButton {
+    font-size: 15px;
+}
+
 .clearButton {
     font-size: 12px;
     background: #ff6666;
