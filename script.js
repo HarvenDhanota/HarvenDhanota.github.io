@@ -37,7 +37,7 @@ function ConvertToRadians(degrees) {
 
 function Sine() {
     let display = document.getElementById('display');
-    let value = FixedRounding(eval(display.value));
+    let value = eval(display.value);
     
     try {
         if (angleUnits === "RAD") {
@@ -47,7 +47,7 @@ function Sine() {
             value = ConvertToRadians(value);
         }
 
-        display.value = Math.sin(value);
+        display.value = FixedRounding(Math.sin(value));
     }
     catch {
         display.value = "Error";
@@ -56,7 +56,7 @@ function Sine() {
 
 function Cosine() {
     let display = document.getElementById('display');
-    let value = FixedRounding(eval(display.value));
+    let value = eval(display.value);
     
     try {
         if (angleUnits === "RAD") {
@@ -66,7 +66,7 @@ function Cosine() {
             value = ConvertToRadians(value);
         }
 
-        display.value = Math.cos(value);
+        display.value = FixedRounding(Math.cos(value));
     }
     catch {
         display.value = "Error";
@@ -75,7 +75,7 @@ function Cosine() {
 
 function Tangent() {
     let display = document.getElementById('display');
-    let value = FixedRounding(eval(display.value));
+    let value = eval(display.value);
     
     try {
         if (angleUnits === "RAD") {
@@ -85,7 +85,7 @@ function Tangent() {
             value = ConvertToRadians(value);
         }
 
-        let output = Math.tan(value);
+        let output = FixedRounding(Math.tan(value));
 
         if (output > 1e12) {
             display.value = "∞"
@@ -101,16 +101,13 @@ function Tangent() {
 
 function Logarithm() {
     let display = document.getElementById('display');
-    let value = FixedRounding(eval(display.value));
+    let value = eval(display.value);
     try {
-        if (value === 0) {
-            display.value = "-∞"
-        }
-        else if (value < 0) {
-            display.value = "Cannot take log of negative value."
+        if (value <= 0) {
+            display.value = "Cannot take log of non-positive value."
         }
         else {
-            display.value = Math.log(value);
+            display.value = FixedRounding(Math.log(value));
         }
     }
     catch {
