@@ -87,7 +87,7 @@ function Tangent() {
 
         let output = FixedRounding(Math.tan(value));
 
-        if (output > 1e12) {
+        if (Math.abs(output) > 1e12) {
             display.value = "undefined"
         }
         else {
