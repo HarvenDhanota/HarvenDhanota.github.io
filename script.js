@@ -15,11 +15,15 @@ function AppendPiConstant() {
 function Calculate() {
     let display = document.getElementById('display');
     try {
-        display.value = eval(display.value);
+        display.value = FixedRounding(eval(display.value));
     }
     catch {
         display.value = "Error";
     }
+}
+
+function FixedRounding(value) {
+    return Number.parseFloat(value.toFixed(10));
 }
 
 function Mode() {
@@ -35,7 +39,7 @@ function Sine() {
     let display = document.getElementById('display');
     let value = eval(display.value)
     try {
-        display.value = (angleUnits === "RAD" ? Math.sin(value) : Math.sin(ConvertToRadians(value)));
+        display.value = (angleUnits === "RAD" ? FixedRounding(Math.sin(value)) : FixedRounding(Math.sin(ConvertToRadians(value))));
     }
     catch {
         display.value = "Error";
@@ -46,7 +50,7 @@ function Cosine() {
     let display = document.getElementById('display');
     let value = eval(display.value)
     try {
-        display.value = (angleUnits === "RAD" ? Math.cos(value) : Math.cos(ConvertToRadians(value)));
+        display.value = (angleUnits === "RAD" ? FixedRounding(Math.cos(value)) : FixedRounding(Math.cos(ConvertToRadians(value))));
     }
     catch {
         display.value = "Error";
@@ -57,7 +61,7 @@ function Tangent() {
     let display = document.getElementById('display');
     let value = eval(display.value)
     try {
-        display.value = (angleUnits === "RAD" ? Math.tan(value) : Math.tan(ConvertToRadians(value)));
+        display.value = (angleUnits === "RAD" ? FixedRounding(Math.tan(value)) : FixedRounding(Math.tan(ConvertToRadians(value))));
     }
     catch {
         display.value = "Error";
@@ -67,7 +71,7 @@ function Tangent() {
 function Logarithm() {
     let display = document.getElementById('display');
     try {
-        display.value = Math.log(eval(display.value));
+        display.value = FixedRounding(Math.log(eval(display.value)));
     }
     catch {
         display.value = "Error";
