@@ -88,7 +88,7 @@ function Tangent() {
         let output = FixedRounding(Math.tan(value));
 
         if (output > 1e12) {
-            display.value = "∞"
+            display.value = "undefined"
         }
         else {
             display.value = output;
@@ -104,7 +104,7 @@ function Logarithm() {
     let value = eval(display.value);
     try {
         if (value <= 0) {
-            display.value = "Cannot take log of non-positive value."
+            display.value = "undefined"
         }
         else {
             display.value = FixedRounding(Math.log(value));
